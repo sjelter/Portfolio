@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    Redirecting...
+
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('ru')) 
+		{
+            window.location.replace('./ru/index.html'); 
+        } 
+		else 
+		{
+            window.location.replace('./en/index.html');
+        }
+    </script>
+    
+    <noscript>
+        <p>JavaScript is disabled. Please choose your language:</p>
+        <a href="./ru/index.html">English</a> | <a href="./ru/index.html">Русский</a>
+    </noscript>
+</body>
+</html>

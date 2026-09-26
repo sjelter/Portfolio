@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Portfolio</title>
+	<style>
+		body
+		{
+			background-color: white;
+			max-width: 1000px; 
+			margin: 0 auto;
+			padding: 10px;
+			font-family: Arial;
+			font-size: 15px;
+			line-height: 1.4;
+		}
+
+		h1
+		{
+			font-size: 28px;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		
+		h2
+		{
+			font-size: 22px;
+			font-weight: bold;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		
+		h3
+		{
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		
+		p
+		{
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		hr
+		{
+			border: none;
+			border-top: 2px solid #aaa;
+			margin: 20px 0;
+		}
+		
+		ul
+		{
+			margin: 0;
+			padding-left: 25px;
+		}
+		
+		li
+		{
+			margin-bottom: 3px;
+		}
+		
+		td
+		{
+			vertical-align: top;
+			padding: 3px 9px;
+		}
+		
+		.title
+		{
+			text-align: center;
+		}
+		
+		.game
+		{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			padding: 0px 15px 0px 15px;
+		}
+
+		.systems
+		{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			padding: 0px 0px 0px 5px;
+		}
+		
+		.info
+		{
+			flex: 1 1 200px;
+			text-align: justify;
+		}
+
+		.screenshot-placeholder
+		{
+			flex: 1 1 200px;
+			text-align: center;
+		}
+
+		.screenshot
+		{
+			max-height: 300px;
+		}
+		
+		summary
+		{
+			font-weight: bold;
+			cursor: pointer;
+		}
+		
+		summary:hover
+		{
+			text-decoration: underline;
+		}
+		
+		#trailer
+		{
+			flex: 1 1 200px;
+			padding: 15px 15px 0px 15px;
+			box-sizing: border-box;
+			width: 30%;
+			height: 50%;
+			display: block;
+		}
+    </style>
+</head>
+<body>
+    <h1 class="title">Portfolio</h1>
+    <hr>
+    <div>
+		<div class="game">
+			<div class="info">
+				<h3>Chemical Reaction Visualisation</h3>
+				<ul>
+					<li>Platform: Windows</li>
+					<li>Source code: <a href="https://github.com/sjelter/Chemical-Reactions">GitHub</a></li>
+				</ul>
+				<p>
+				The scene features reagent containers (flasks, test tubes) and a reaction station with devices for manipulating the station (electricity, heat, light). The menu allows to restart the scene, explore the list of substances and reactions, fill a syringe with the selected reagent, and create substances and reactions. When creating substances, you can customize the display material for the substance, and when creating a reaction, you can customize the reversibility and required reaction conditions.
+			</div>
+			<video controls muted autoplay loop id="trailer">
+			     <source src="../multimedia/videos/cr_preview.mp4" type="video/mp4" >
+			 </video>
+		</div>
+		<details>
+			<summary>Key developed classes and systems</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>A simplified alternative to UnityEngine.UI.Selectable to compensate for the lack of control over classes inherited from it and redundant functionality;</li>
+						<li>Color picker panel inspired by Unity's color picker panel;</li>
+						<li>Interfaces and code for editors of substances and reactions, dynamic rendering of icons from 3D objects, saving lists in JSON format;</li>
+						<li>A simple system for switching between UI panels, customizable directly in the editor.</li>
+					</ul>
+				</div>
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/gifs/cr_colorpicker.gif" title="Подбор цветов">
+				</div>
+			</div>		
+		</details>
+    </div>	
+	<hr>
+	<div>
+		<div class="game">
+			<div class="info">
+				<h3>Animation application of the production process of a factory based on the output of a GPSS model</h3>
+				<ul>
+					<li>Platform: Windows</li>
+				</ul>
+				<p>
+				The GPSS Studio simulation environment models different technological processes. There are numerous constraints - workpieces are transported by heat treatment operators in pairs, some stations are assigned to specific employee roles, and so on. Using the GPSS model's output, the application animates a workflow and changes in manufactory's objects states. The demonstration shows the processing of two workpieces using different technological processes.
+			</div>
+			<video controls muted autoplay loop id="trailer">
+			     <source src="../multimedia/videos/zkbm_preview.mp4" type="video/mp4" >
+			 </video>
+		</div>    
+		<details>
+			<summary>Key developed classes and systems</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Generating a process simulation log in GPSS Studio;</li>
+						<li>A file parser based on the formalized structure of the GPSS model output log;</li>
+						<li>The StateChanger class, which carries the change of states of simulation objects;</li>
+						<li>Separating operator actions into OperatorAction subclasses;</li>
+					</ul>
+				</div> 
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/images/zkbm_blurredfactoryplan.png" title="Blurred Plan">
+				</div>
+			</div>		
+		</details>
+    </div>	
+	<hr>
+	<div>
+		<div class="game">
+			<div class="info">
+				<h3>Application for calculating machine cutting parameters</h3>
+				<ul>
+					<li>Platform: Windows, Android</li>
+				</ul>
+				<p>
+				An engineering calculator that provides calculations for five types of machining operations performed by mechanical engineers. Data entry is divided into steps, which vary depending on the type of machining. Forms display input fields, notes on completion, and sometimes the formulas used.
+				<p>
+				Formulas, tables and calculation algorithms are taken from the book by A.N. Balabanov "Brief Handbook of a Mechanical Engineer" (1992).
+			</div>
+			<div class="screenshot-placeholder">
+				<img class="screenshot" src="../multimedia/images/rz_stageexample1.png" title="Step example">
+				<img class="screenshot" src="../multimedia/images/rz_stageexample2.png" title="Step example with formula">
+			</div>
+		</div>
+		<details>
+			<summary>Key developed classes and systems</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Calculation systems for each type of part processing;</li>
+						<li>A repository of reference information containing the characteristics of parts, tools, etc., as well as the corresponding coefficients and limitations;</li>
+						<li>Flexible data accumulation structure for stage chains;</li>
+						<li>Adaptive sizing of forms and interface elements for correct display on any screen with one of the standard aspect ratios.</li>
+					</ul>
+				</div> 
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/images/rz_results.png" title="Result Screen">
+				</div>
+			</div>		
+		</details>
+    </div>
+	<hr>
+	<div>
+		<div class="game">
+			<div class="info">
+				<h3>Game "BUZZLE PUZZLE"</h3>
+				<ul>
+					<li>Platform: Android</li>
+				</ul>
+				<p>
+				An experimental game where players collect various resources (nectar, honey, pollen) from a honeycomb grid. Only identical resource types and quantities can be combined. Holding empty cells allows the entire row of honeycombs to be moved.
+				<p>
+				My task in the project is to create the basis of the gameplay: a controlled hexagonal grid, a random generation system, the implementation of core mechanics and their visual feedback.
+			</div>
+			<video controls muted autoplay loop id="trailer">
+			     <source src="../multimedia/videos/bzpz_preview.mp4" type="video/mp4" >
+			 </video>
+		</div>
+		<details>
+			<summary>Key developed classes and systems</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Hexagonal grid with content management methods;</li>			
+						<li>A software package for generating sequences of objects based on weights with its own interface in the Inspector window and various operating modes:
+							<ul>
+								<li>Distribution modes:
+									<ul>
+										<li>At Default, the percentage is the chance of a resource appearing in a cell.;</li>
+										<li>At Spread, the percentage is the amount of resource on the entire grid.;</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Weight Modes:
+									<ul>
+										<li>Default - one weight value;</li>
+										<li>Ranged - a weight is selected from the range with equal probability;</li>
+										<li>Ranged With Probabiliy - the weight is selected from the interval taking into account the distribution curve;</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Modular scripts for animating and changing the color of cells upon interaction.</li>
+					</ul>
+				</div> 
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/images/bzpz_randomexample.png" title="Inspector of RandomSet<Resource>">
+				</div>
+			</div>		
+		</details>
+    </div>
+</body>
+</html>

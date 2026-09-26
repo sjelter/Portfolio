@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Портфолио</title>
+	<style>
+		body
+		{
+			background-color: white;
+			max-width: 1000px; 
+			margin: 0 auto;
+			padding: 10px;
+			font-family: Arial;
+			font-size: 15px;
+			line-height: 1.4;
+		}
+
+		h1
+		{
+			font-size: 28px;
+			font-weight: bold;
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		
+		h2
+		{
+			font-size: 22px;
+			font-weight: bold;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		
+		h3
+		{
+			font-size: 18px;
+			font-weight: bold;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		
+		p
+		{
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		hr
+		{
+			border: none;
+			border-top: 2px solid #aaa;
+			margin: 20px 0;
+		}
+		
+		ul
+		{
+			margin: 0;
+			padding-left: 25px;
+		}
+		
+		li
+		{
+			margin-bottom: 3px;
+		}
+		
+		td
+		{
+			vertical-align: top;
+			padding: 3px 9px;
+		}
+		
+		.title
+		{
+			text-align: center;
+		}
+		
+		.game
+		{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			padding: 0px 15px 0px 15px;
+		}
+
+		.systems
+		{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+			padding: 0px 0px 0px 5px;
+		}
+		
+		.info
+		{
+			flex: 1 1 200px;
+			text-align: justify;
+		}
+
+		.screenshot-placeholder
+		{
+			flex: 1 1 200px;
+			text-align: center;
+		}
+
+		.screenshot
+		{
+			max-height: 300px;
+		}
+		
+		summary
+		{
+			font-weight: bold;
+			cursor: pointer;
+		}
+		
+		summary:hover
+		{
+			text-decoration: underline;
+		}
+		
+		#trailer
+		{
+			flex: 1 1 200px;
+			padding: 15px 15px 0px 15px;
+			box-sizing: border-box;
+			width: 30%;
+			height: 50%;
+			display: block;
+		}
+    </style>
+</head>
+<body>
+    <h1 class="title">Портфолио</h1>
+    <a href="./resume_muzyakov_michael_ru.pdf">Ссылка на резюме</a>
+    <hr>
+    <div>
+		<div class="game">
+			<div class="info">
+				<h3>Приложение виртуализации химических реакций</h3>
+				<ul>
+					<li>Платформа: Windows</li>
+					<li>Исходный код: <a href="https://github.com/sjelter/Chemical-Reactions">GitHub</a></li>
+				</ul>
+				<p>
+				На сцене имеются контейнеры для реактивов (колбы, пробирки) и станция реакций с устройствами для воздействия на станцию (электричество, тепло, свет). В меню можно перезапустить сцену, изучить список веществ и реакций, заполнить шприц выбранным реактивом и создать вещества и реакции. При создании веществ можно настроить материал отображения вещества, а при создании реакции - обратимость и необходимые условия среды реакции.
+			</div>
+			<video controls muted autoplay loop id="trailer">
+			     <source src="../multimedia/videos/cr_preview.mp4" type="video/mp4" >
+			 </video>
+		</div>
+		<details>
+			<summary>Ключевые разработанные классы и системы</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Упрощенная альтернатива UnityEngine.UI.Selectable для компенсации недостающего контроля над наследуемыми от него классами и избыточной функциональностью;</li>
+						<li>Панель подбора цветов, вдохновленная панелью подбора цветов Unity;</li>
+						<li>Интерфейсы и код редакторов веществ и реакций, динамический рендер иконок из 3D-объектов, сохранение списков в формате JSON;</li>
+						<li>Простая система перехода между панелями интерфейса, настраиваемая прямо в редакторе.</li>
+					</ul>
+				</div>
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/gifs/cr_colorpicker.gif" title="Подбор цветов">
+				</div>
+			</div>		
+		</details>
+    </div>	
+	<hr>
+	<div>
+		<div class="game">
+			<div class="info">
+				<h3>Приложение анимации производственного процесса цеха на основе вывода GPSS-модели</h3>
+				<ul>
+					<li>Платформа: Windows</li>
+				</ul>
+				<p>
+				В среде имитационного моделирования GPSS Studio моделируется работа цеха. Имеется множество ограничений - заготовки перевозятся термистами вдвоем, некоторые станции привязаны к роли сотрудника и так далее. По выходным данным GPSS-модели приложение воспроизводит анимацию и изменение состояний объектов цеха. На демонстрации представлена обработка двух заготовок разными технологическими процессами.
+			</div>
+			<video controls muted autoplay loop id="trailer">
+			     <source src="../multimedia/videos/zkbm_preview.mp4" type="video/mp4" >
+			 </video>
+		</div>    
+		<details>
+			<summary>Ключевые разработанные классы и системы</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Генерация лога имитационного моделирования технологических процессов в GPSS Studio;</li>
+						<li>Парсер файлов, основанный на формализованной структуре выходного лога GPSS-модели;</li>
+						<li>Класс StateChanger, несущий на себе изменение состояний объектов имитационного моделирования;</li>
+						<li>Разделение действий операторов на подклассы OperatorAction;</li>
+					</ul>
+				</div> 
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/images/zkbm_blurredfactoryplan.png" title="Замыленный план">
+				</div>
+			</div>		
+		</details>
+    </div>	
+	<hr>
+	<div>
+		<div class="game">
+			<div class="info">
+				<h3>Приложение для расчетов режима резания станка</h3>
+				<ul>
+					<li>Платформа: Windows, Android</li>
+				</ul>
+				<p>
+				Инженерный калькулятор, предоставляющий расчеты для пяти видов обработки детали на станках технологов-машиностроителей. Ввод данных разделены на этапы, которые различаются в зависимости от вида обработки. На формах отображены поля ввода и примечания к заполнению, а иногда и используемые формулы.
+				<p>
+				Формулы, таблицы и алгоритмы расчетов взяты из книги Балабанова А.Н. "Краткий справочник технолога-машиностроителя" 1992 года.
+			</div>
+			<div class="screenshot-placeholder">
+				<img class="screenshot" src="../multimedia/images/rz_stageexample1.png" title="Пример этапа">
+				<img class="screenshot" src="../multimedia/images/rz_stageexample2.png" title="Пример этапа с формулами">
+			</div>
+		</div>
+		<details>
+			<summary>Ключевые разработанные классы и системы</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Системы вычислений на каждую разновидность обработки детали;</li>
+						<li>Репозиторий справочной информации, содержащий характеристики деталей, инструментов и т.п., а также соответствующие коэффициенты и ограничения;</li>
+						<li>Гибкая структура накопления данных для цепочек этапов;</li>
+						<li>Адаптивный размер форм и элементов интерфейса для корректного отображения в любом экране с одним из стандартных соотношений сторон.</li>
+					</ul>
+				</div> 
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/images/rz_results.png" title="Панель результатов">
+				</div>
+			</div>		
+		</details>
+    </div>
+	<hr>
+	<div>
+		<div class="game">
+			<div class="info">
+				<h3>Игра "BUZZLE PUZZLE"</h3>
+				<ul>
+					<li>Платформа: Android</li>
+				</ul>
+				<p>
+				Экспериментальная игра, игровой процесс которой заключен в сборе различных ресурсов (нектар, мед, пыльца) с сетки из сот. Соединять содержимое сот можно только одинакового типа ресурса и одинакового количества. Удерживая пустые ячейки можно сместить весь ряд сот.
+				<p>
+				Моя задача в проекте это создание основы игрового процесса: управляемая шестиугольная сетка, система случайной генерации, реализация core-механик и их визуальной отдачи.
+			</div>
+			<video controls muted autoplay loop id="trailer">
+			     <source src="../multimedia/videos/bzpz_preview.mp4" type="video/mp4" >
+			 </video>
+		</div>
+		<details>
+			<summary>Ключевые разработанные классы и системы</summary>
+			<div class="systems">
+				<div class="info">
+					<ul>
+						<li>Шестиугольная сетка с методами управления содержимым;</li>			
+						<li>Программный пакет для генерации последовательностей объектов основанный на весах с собственным интерфейсом в окне Inspector и различными режимами работы:
+							<ul>
+								<li>Режимы распределения:
+									<ul>
+										<li>При Default процент - шанс появления ресурса в ячейке;</li>
+										<li>При Spread процент - количество ресурса на всей сетке;</li>
+									</ul>
+								</li>
+							</ul>
+							<ul>
+								<li>Режимы весов:
+									<ul>
+										<li>Default - одно значение веса;</li>
+										<li>Ranged - равновероятно выбирается вес из диапазона;</li>
+										<li>Ranged With Probabiliy - выбирается вес из промежутка с учетом кривой распределения;</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Модульные скрипты для анимации и изменения цвета ячеек при взаимодействии с ними.</li>
+					</ul>
+				</div> 
+				<div class="screenshot-placeholder">
+					<img class="screenshot" src="../multimedia/images/bzpz_randomexample.png" title="Редактор RandomSet<Resource>">
+				</div>
+			</div>		
+		</details>
+    </div>
+</body>
+</html>
